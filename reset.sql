@@ -1,0 +1,16 @@
+set search_path=badgemanagement; truncate badge cascade;
+set search_path=badgemanagement; truncate changelog cascade;
+set search_path=message; truncate changelog cascade;
+set search_path=message; truncate message cascade;
+set search_path=referencedata; truncate changelog cascade;
+set search_path=referencedata; truncate data_domain cascade;
+set search_path=referencedata; truncate data_group cascade;
+set search_path=referencedata; truncate data_subgroup cascade;
+set search_path=referencedata; truncate group_domain_map cascade;
+set search_path=referencedata; truncate reference_data cascade;
+set search_path=usermanagement; truncate changelog cascade;
+set search_path=usermanagement; truncate email_link cascade;
+set search_path=usermanagement; truncate local_authority cascade;
+set search_path=usermanagement; truncate local_authority_area cascade;
+set search_path=usermanagement; truncate roles cascade;
+set search_path=usermanagement; truncate users cascade;
