@@ -1,10 +1,6 @@
 . ./env.sh
 
-ACCESS_TOKEN_RESPONSE=$(curl -s -X POST 'http://localhost:8380/bb_auth/oauth/token?grant_type=client_credentials' \
- -H 'Authorization: Basic dGhpcmRfcGFydHlfYXBwOnRoaXJkX3BhcnR5X2FwcF9zZWNyZXQ=' \
- -H 'Content-Type: application/json' )
-
-ACCESS_TOKEN=$(echo $ACCESS_TOKEN_RESPONSE | jq '.access_token' | sed 's/\"//g')
+ACCESS_TOKEN=$(get_access_token)
 
 RESULT=$(curl -sv -X POST "$BB_USERS_URL/users" \
     -H "accept: application/json" \

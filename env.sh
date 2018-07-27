@@ -24,3 +24,10 @@ status(){
     fi
 }
 
+get_access_token(){
+    ACCESS_TOKEN_RESPONSE=$(curl -s -X POST 'http://localhost:8380/bb_auth/oauth/token?grant_type=client_credentials' \
+     -H 'Authorization: Basic dGhpcmRfcGFydHlfYXBwOnRoaXJkX3BhcnR5X2FwcF9zZWNyZXQ=' \
+     -H 'Content-Type: application/json' )
+
+    echo $ACCESS_TOKEN_RESPONSE | jq '.access_token' | sed 's/\"//g'
+}

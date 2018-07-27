@@ -33,3 +33,5 @@ echo "User Management"
 printf '%0.1s' "-"{1..55}
 printf '\n'
 bash curls/user-management/create-a-user.sh
+bash curls/user-management/find-users-by-la-id.sh
+
