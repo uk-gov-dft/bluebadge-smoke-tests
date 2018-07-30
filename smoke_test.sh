@@ -34,5 +34,6 @@ echo
 echo "User Management"
 echo
 bash curls/user-management/create-a-user.sh
+bash curls/user-management/create-a-user-fails.sh
 bash curls/user-management/find-users-by-la-id.sh
 
