@@ -1,4 +1,5 @@
 # Notify requires the correct time.
+set -e
 
 echo
 echo "Setup"
@@ -18,9 +19,9 @@ printf '\n'
 bash curls/health.sh
 
 # run the badge management smoke tests
+echo 
 echo "Badge Management"
-printf '%0.1s' "-"{1..55}
-printf '\n'
+echo
 bash curls/badge-management/create-a-badge.sh
 bash curls/badge-management/find-badges-by-postcode.sh
 bash curls/badge-management/find-badges-by-name.sh
@@ -29,9 +30,9 @@ bash curls/badge-management/replace-a-badge.sh
 bash curls/badge-management/cancel-a-badge.sh
 bash curls/badge-management/delete-a-badge.sh
 
+echo 
 echo "User Management"
-printf '%0.1s' "-"{1..55}
-printf '\n'
+echo
 bash curls/user-management/create-a-user.sh
 bash curls/user-management/find-users-by-la-id.sh
 

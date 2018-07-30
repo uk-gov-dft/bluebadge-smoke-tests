@@ -1,10 +1,8 @@
 . ./env.sh
 
-RESULT=$(curl -s -o /dev/null -w "%{http_code}" \
-    -X POST "$BB_URL/badges/KKKKKK/cancellations" \
+curl -vs -X POST "$BB_URL/badges/KKKKKK/cancellations" \
     -H "accept: application/json" \
     -H "Content-Type: application/json" \
-    -d @json/cancel-badge.json \
-    | (grep -q "200" && echo 1) || echo 0)
+    -d @json/cancel-badge.json 2>&1 \
+    | schmokin -s 200
 
-assert "cancel a badge" $RESULT

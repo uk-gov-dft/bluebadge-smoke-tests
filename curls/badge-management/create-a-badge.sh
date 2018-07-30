@@ -1,9 +1,8 @@
 . ./env.sh
 
-RESULT=$(curl -s -X POST "$BB_URL/badges" \
+curl -vs -X POST "$BB_URL/badges" \
     -H "accept: application/json" \
     -H "Content-Type: application/json" \
-    -d @json/create-badge.json | \
-    jq '.data[0] | length' | (grep -q 6 && echo 1) || echo 0)
+    -d @json/create-badge.json 2>&1 | \
+    schmokin --jq-expr '.data[0] | length' --eq 6
 
-assert "create a badge" $RESULT

@@ -1,9 +1,8 @@
 . ./env.sh
 
-RESULT=$(curl -s -X POST "$BB_URL/badges/KKKKKK/replacements" \
+curl -vs -X POST "$BB_URL/badges/KKKKKK/replacements" \
     -H "accept: application/json" \
     -H "Content-Type: application/json" \
-    -d @json/replace-badge.json | \
-    jq '.data' | (grep -q "KKKKKJ" && echo 1) || echo 0)
+    -d @json/replace-badge.json 2>&1 \
+    | schmokin -s 501
 
-assert "replace a badge" $RESULT
