@@ -1,8 +1,10 @@
 . ./env.sh
 
-curl -vs -X POST "$BB_URL/badges/KKKKKK/cancellations" \
+ACCESS_TOKEN=$(get_access_token)
+
+schmokin "$BB_URL/badges/KKKKKK/cancellations" --status --eq 200 --\
+    -X "POST" \
     -H "accept: application/json" \
     -H "Content-Type: application/json" \
-    -d @json/cancel-badge.json 2>&1 \
-    | schmokin -s 200
-
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -d @json/cancel-badge.json

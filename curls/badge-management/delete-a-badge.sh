@@ -1,9 +1,13 @@
 . ./env.sh
 
-curl -s -X DELETE "$BB_URL/badges/KKKKKK" -H "accept: application/json"
+ACCESS_TOKEN=$(get_access_token)
 
-curl -vs -X GET "$BB_URL/badges/KKKKKK" \
+curl -s -X DELETE "$BB_URL/badges/KKKKKK" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -H "accept: application/json"
+
+schmokin "$BB_URL/badges/KKKKKK" --status --eq 200 --\
     -H "accept: application/json" \
-    -H "Content-Type: application/json" 2>&1 \
-    | schmokin -s 200
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
 

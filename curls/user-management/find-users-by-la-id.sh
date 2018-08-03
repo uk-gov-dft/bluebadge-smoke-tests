@@ -2,8 +2,6 @@
 
 ACCESS_TOKEN=$(get_access_token)
 
-curl -sv -X GET "$BB_USERS_URL/users?authorityId=2" \
+schmokin "$BB_USERS_URL/users?authorityId=2" --jq '.data | length' --gt 0 --\
     -H "accept: application/json" \
-    -H "Authorization: Bearer $ACCESS_TOKEN" 2>&1\
-    | schmokin --jq-expr '.data | length' --gt 0
-
+    -H "Authorization: Bearer $ACCESS_TOKEN"

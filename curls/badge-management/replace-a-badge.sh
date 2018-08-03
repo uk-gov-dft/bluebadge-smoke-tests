@@ -1,8 +1,10 @@
 . ./env.sh
 
-curl -vs -X POST "$BB_URL/badges/KKKKKK/replacements" \
+ACCESS_TOKEN=$(get_access_token)
+
+schmokin "$BB_URL/badges/KKKKKK/replacements" --status --eq 501 --\
     -H "accept: application/json" \
     -H "Content-Type: application/json" \
-    -d @json/replace-badge.json 2>&1 \
-    | schmokin -s 501
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -d @json/replace-badge.json
 

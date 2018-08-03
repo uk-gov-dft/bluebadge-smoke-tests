@@ -1,6 +1,8 @@
 . ./env.sh
 
-curl -vs -X GET "$BB_URL/badges?name=Fred" \
+ACCESS_TOKEN=$(get_access_token)
+
+schmokin "$BB_URL/badges?name=Fred" --jq '.data | length' --eq 1 --\
     -H "accept: application/json" \
-    -H "Content-Type: application/json" 2>&1 \
-    | schmokin --jq-expr '.data | length' --eq 1
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
