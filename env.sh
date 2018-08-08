@@ -1,10 +1,11 @@
 export RED='\033[0;31m'
 export NC='\033[0m' # No Color
 export GREEN='\033[0;32m'
+
+export GATEWAY_URL="http://api.local.does.not.exist:9090"
+
 export BB_URL="http://api.local.does.not.exist:9090"
 export BB_USERS_URL="http://api.local.does.not.exist:9090"
-#export BB_URL="https://api.int.does.not.exist"
-#export BB_USERS_URL="https://api.int.does.not.exist"
 
 assert(){
     TEST=$1
@@ -27,7 +28,7 @@ status(){
 }
 
 get_access_token(){
-    ACCESS_TOKEN_RESPONSE=$(curl -s -X POST 'http://api.local.does.not.exist:9090/oauth/token?grant_type=client_credentials' \
+    ACCESS_TOKEN_RESPONSE=$(curl -s -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials" \
      -H 'Authorization: Basic dGhpcmRfcGFydHlfYXBwOnRoaXJkX3BhcnR5X2FwcF9zZWNyZXQ=' \
      -H 'Content-Type: application/json' )
 

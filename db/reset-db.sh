@@ -14,4 +14,5 @@ psql -q -h localhost -U developer -d bb_dev -c "SELECT table_schema,table_name
 echo "drop sequence badgemanagement.badge_no;" >> /tmp/reset_bb_dev.sql
 echo "CREATE SEQUENCE badgemanagement.badge_no INCREMENT -1 START WITH 63999999 MAXVALUE 63999999;" >> /tmp/reset_bb_dev.sql
 
+echo RUNNING RESET!!
 psql -q -h localhost -U developer -d bb_dev -f /tmp/reset_bb_dev.sql
