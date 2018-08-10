@@ -27,9 +27,13 @@ status(){
     fi
 }
 
+ClientID=***REMOVED***
+ClientSecret=***REMOVED***
+Cred=$(printf "%s:%s" "$ClientID" "$ClientSecret" | base64)
+
 get_access_token(){
     ACCESS_TOKEN_RESPONSE=$(curl -s -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials" \
-     -H 'Authorization: Basic dGhpcmRfcGFydHlfYXBwOnRoaXJkX3BhcnR5X2FwcF9zZWNyZXQ=' \
+     -H "Authorization: Basic $Cred" \
      -H 'Content-Type: application/json' )
 
     echo $ACCESS_TOKEN_RESPONSE | jq '.access_token' | sed 's/\"//g'

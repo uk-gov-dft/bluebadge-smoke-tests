@@ -1,6 +1,6 @@
 # Notify requires the correct time.
 
-curl -Ls https://github.com/reaandrew/schmokin/releases/download/0.1.0/schmokin_install | bash
+#curl -Ls https://github.com/reaandrew/schmokin/releases/download/0.1.0/schmokin_install | bash
 . ~/.profile
 
 set -e
