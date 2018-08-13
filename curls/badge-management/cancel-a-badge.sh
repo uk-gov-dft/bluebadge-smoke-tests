@@ -2,7 +2,7 @@
 
 ACCESS_TOKEN=$(get_access_token)
 
-schmokin "$BB_URL/badges/KKKKKK/cancellations" --status --eq 200 --\
+schmokin '$BB_URL/badges/$badgeNumber/cancellations' --status --eq 200 --\
     -X "POST" \
     -H "accept: application/json" \
     -H "Content-Type: application/json" \

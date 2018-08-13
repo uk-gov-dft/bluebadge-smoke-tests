@@ -2,10 +2,11 @@ export RED='\033[0;31m'
 export NC='\033[0m' # No Color
 export GREEN='\033[0;32m'
 
-export GATEWAY_URL="http://api.local.does.not.exist:9090"
 
-export BB_URL="http://api.local.does.not.exist:9090"
-export BB_USERS_URL="http://api.local.does.not.exist:9090"
+
+export GATEWAY_URL="https://api.int.does.not.exist"
+export BB_URL="$GATEWAY_URL"
+export BB_USERS_URL="$GATEWAY_URL"
 
 assert(){
     TEST=$1
@@ -33,4 +34,10 @@ get_access_token(){
      -H 'Content-Type: application/json' )
 
     echo $ACCESS_TOKEN_RESPONSE | jq '.access_token' | sed 's/\"//g'
+}
+
+gen_person(){
+    FIRSTNAME=$(shuf -n 1 data/CSV_Database_of_First_Names.csv)
+    LASTNAME=$(shuf -n 1 data/CSV_Database_of_Last_Names.csv)
+    echo "$FIRSTNAME $LASTNAME $FIRSTNAME.$LASTNAME@does.not.exist"
 }
