@@ -38,3 +38,9 @@ bash curls/user-management/create-a-user.sh
 bash curls/user-management/create-a-user-fails.sh
 bash curls/user-management/find-users-by-la-id.sh
 
+
+echo
+echo "Application Management"
+echo
+
+bash curls/applications-management/
