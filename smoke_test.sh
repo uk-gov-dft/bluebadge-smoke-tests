@@ -43,4 +43,4 @@ echo
 echo "Application Management"
 echo
 
-bash curls/applications-management/
+bash curls/applications-management/create-application.sh

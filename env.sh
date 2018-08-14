@@ -2,9 +2,7 @@ export RED='\033[0;31m'
 export NC='\033[0m' # No Color
 export GREEN='\033[0;32m'
 
-
-
-export GATEWAY_URL="https://api.int.does.not.exist"
+export GATEWAY_URL="https://0pnswth4li.execute-api.eu-west-2.amazonaws.com/int"
 export BB_URL="$GATEWAY_URL"
 export BB_USERS_URL="$GATEWAY_URL"
 
