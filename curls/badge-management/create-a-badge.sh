@@ -2,6 +2,8 @@
 
 ACCESS_TOKEN=$(get_access_token)
 
+echo "ACCESS_TOKEN $ACCESS_TOKEN"
+
 schmokin "$BB_URL/badges" --jq '.data[0] | length' --eq 6 \
     --jq '.data[0]' \
     --export badgeNumber\

@@ -30,6 +30,9 @@ ClientID=***REMOVED***
 ClientSecret=***REMOVED***
 Cred=$(printf "%s:%s" "$ClientID" "$ClientSecret" | base64)
 
+echo "$Cred"
+exit 0
+
 get_access_token(){
     ACCESS_TOKEN_RESPONSE=$(curl -s -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials" \
      -H "Authorization: Basic $Cred" \
