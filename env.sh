@@ -2,7 +2,7 @@ export RED='\033[0;31m'
 export NC='\033[0m' # No Color
 export GREEN='\033[0;32m'
 
-export GATEWAY_URL="https://api.qa.does.not.exist"
+export GATEWAY_URL="https://api.int.does.not.exist"
 export BB_URL="$GATEWAY_URL"
 export BB_USERS_URL="$GATEWAY_URL"
 
@@ -29,9 +29,6 @@ status(){
 ClientID=***REMOVED***
 ClientSecret=***REMOVED***
 Cred=$(printf "%s:%s" "$ClientID" "$ClientSecret" | base64)
-
-echo "$Cred"
-exit 0
 
 get_access_token(){
     ACCESS_TOKEN_RESPONSE=$(curl -s -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials" \
