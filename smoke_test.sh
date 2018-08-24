@@ -44,3 +44,8 @@ echo "Application Management"
 echo
 
 bash curls/applications-management/create-application.sh
+
+echo
+echo "Messages"
+echo
+bash curls/messages/send-a-message.sh
