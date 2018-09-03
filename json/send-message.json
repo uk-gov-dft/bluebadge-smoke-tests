@@ -2,6 +2,7 @@
     "template": "RESET_PASSWORD",
     "emailAddress": "john.doe@does.not.exist",
     "attributes": {
-        "name": "Bob"
+        "fullName":"bob",
+        " ***REMOVED***
     }
 }

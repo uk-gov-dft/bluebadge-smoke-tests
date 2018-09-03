@@ -1,4 +1,4 @@
 {
-  "badgeNumber": "KKKKKK",
+  "badgeNumber": "$badgeNumber",
   "cancelReasonCode": "REVOKE"
 }

@@ -2,17 +2,17 @@
 
 set -e
 
-echo
-echo "Setup"
-printf '%0.1s' "-"{1..55}
-printf '\n'
-# Reset the database and truncate all the tables from bb_dev
-bash db/reset-db.sh
-printf "%50s ${GREEN}%s${NC}\n" "Database reset" "DONE"
+#   echo
+#   echo "Setup"
+#   printf '%0.1s' "-"{1..55}
+#   printf '\n'
+#   # Reset the database and truncate all the tables from bb_dev
+#   bash db/reset-db.sh
+#   printf "%50s ${GREEN}%s${NC}\n" "Database reset" "DONE"
 
-# Add the initial required data
-bash db/setup_data.sql > /dev/null
-printf "%50s ${GREEN}%s${NC}\n" "Database refreshed" "DONE"
+#   # Add the initial required data
+#   bash db/setup_data.sql > /dev/null
+#   printf "%50s ${GREEN}%s${NC}\n" "Database refreshed" "DONE"
 
 echo "Health Check"
 printf '%0.1s' "-"{1..55}

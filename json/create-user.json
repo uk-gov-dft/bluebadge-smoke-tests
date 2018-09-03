@@ -1,6 +1,6 @@
 {
   "name": "Robert Worthington",
-  "emailAddress": "rob.worthington@norealserver.com",
+  "emailAddress": "$EMAIL",
   "localAuthorityShortCode": "ABERD",
   "roleId": 2,
   "roleName": "LA Admin"
