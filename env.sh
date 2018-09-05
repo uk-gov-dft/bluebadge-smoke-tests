@@ -37,9 +37,15 @@ get_access_token(){
 
     echo $ACCESS_TOKEN_RESPONSE | jq '.access_token' | sed 's/\"//g'
 }
+export get_access_token
 
 gen_person(){
     FIRSTNAME=$(shuf -n 1 data/CSV_Database_of_First_Names.csv)
     LASTNAME=$(shuf -n 1 data/CSV_Database_of_Last_Names.csv)
     echo "$FIRSTNAME $LASTNAME $FIRSTNAME.$LASTNAME@does.not.exist"
 }
+export gen_person
+
+export person="$(gen_person)"
+export FULLNAME=$(echo -n $person | cut -d' ' -f1,2 --output-delimiter ' ')
+export EMAIL=$(echo -n $person | cut -d' ' -f3)

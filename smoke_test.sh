@@ -44,6 +44,7 @@ echo "Application Management"
 echo
 
 bash curls/applications-management/create-application.sh
+bash curls/applications-management/find-application-by-name.sh
 
 echo
 echo "Messages"

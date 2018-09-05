@@ -14,8 +14,6 @@ schmokin "$BB_URL/badges" --jq '.data[0] | length' --eq 6 \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -d @json/create-badge.json
 
-echo "badgeNumber = $badgeNumber"
-
 schmokin '$BB_URL/badges/$badgeNumber/cancellations' --status --eq 200 --\
     -X "POST" \
     -H "accept: application/json" \
