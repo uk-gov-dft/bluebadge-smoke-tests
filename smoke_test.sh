@@ -21,14 +21,6 @@ bash curls/badge-management/delete-a-badge.sh
 # bash curls/user-management/create-a-user-fails.sh
 # bash curls/user-management/find-users-by-la-id.sh
 
-
-echo
-echo "Application Management"
-echo
-
-bash curls/applications-management/create-application.sh
-bash curls/applications-management/find-application-by-name.sh
-
 echo
 echo "Messages"
 echo
