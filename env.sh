@@ -2,7 +2,7 @@ export RED='\033[0;31m'
 export NC='\033[0m' # No Color
 export GREEN='\033[0;32m'
 
-export GATEWAY_URL="https://api.pre.does.not.exist"
+export GATEWAY_URL="https://api.test.does.not.exist"
 export BB_URL="$GATEWAY_URL"
 export BB_USERS_URL="$GATEWAY_URL"
 
@@ -31,10 +31,7 @@ ClientSecret=***REMOVED***
 Cred=$(printf "%s:%s" "$ClientID" "$ClientSecret" | base64)
 
 get_access_token(){
-    echo curl -s -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials" -H "Authorization: Basic $Cred"  -H 'Content-Type: application/json' > /tmp/command.sh
-    ACCESS_TOKEN_RESPONSE=$(curl -s -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials" \
-     -H "Authorization: Basic $Cred" \
-     -H 'Content-Type: application/json' )
+    ACCESS_TOKEN_RESPONSE=$(curl -s -u $ClientID:$ClientSecret -X POST "$GATEWAY_URL/oauth/token?grant_type=client_credentials")
 
     echo "$ACCESS_TOKEN_RESPONSE" > /tmp/output
 
