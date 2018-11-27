@@ -26,8 +26,6 @@ status(){
     fi
 }
 
-ClientID=***REMOVED***
-ClientSecret=***REMOVED***
 Cred=$(printf "%s:%s" "$ClientID" "$ClientSecret" | base64)
 
 get_access_token(){
