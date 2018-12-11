@@ -1,6 +1,6 @@
 {
-  "badgeNumber": "KKKKKK",
-  "replaceReasonCode": "STOLEN",
+  "badgeNumber": "$badgeNumber",
+  "replaceReasonCode": "STOLE",
   "deliverToCode": "HOME",
   "deliveryOptionCode": "FAST"
 }
