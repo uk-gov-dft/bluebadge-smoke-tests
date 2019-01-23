@@ -2,7 +2,7 @@
 
 ACCESS_TOKEN=$(get_access_token)
 
-schmokin "$BB_URL/applications?postCode2=SK68GH" \
+schmokin "$BB_URL/applications?postCode=SK68GH" \
     --status --eq 200 \
     --jq '.data | length' \
     --ge 1 \

@@ -2,7 +2,7 @@ export RED='\033[0;31m'
 export NC='\033[0m' # No Color
 export GREEN='\033[0;32m'
 
-export GATEWAY_URL="https://api.test.does.not.exist"
+export GATEWAY_URL="https://api.local.does.not.exist"
 export BB_URL="$GATEWAY_URL"
 export BB_USERS_URL="$GATEWAY_URL"
 
@@ -36,6 +36,16 @@ get_access_token(){
     echo $ACCESS_TOKEN_RESPONSE | jq '.access_token' | sed 's/\"//g'
 }
 export get_access_token
+
+get_mutliple_tokens(){
+  num="${1:-1}"
+  for i in {1.."$num"};
+  do
+    get_access_token
+  done
+}
+
+export get_mutliple_tokens
 
 gen_person(){
     FIRSTNAME=$(shuf -n 1 data/CSV_Database_of_First_Names.csv)
